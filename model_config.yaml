@@ -1,0 +1,8 @@
+model: gpt-oss-120b
+base_url: http://localhost:8000/v1
+api_key_env: API_KEY
+temperature: null
+max_tokens: null
+timeout_seconds: 2000
+retry_attempts: 3
+max_concurrency: 100

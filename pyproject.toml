@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "egar-drc"
+version = "0.1.0"
+description = "Execution-guided agentic repair for KLayout DRC script synthesis"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "langchain>=1,<2",
+  "langchain-openai>=1,<2",
+  "langgraph>=1,<2",
+  "httpx>=0.28,<1",
+  "pydantic>=2.7,<3",
+  "PyYAML>=6,<7",
+]
+
+[project.scripts]
+egar-drc-run = "egar_drc.runtime.runner:main"
+egar-drc-evaluate = "egar_drc.evaluation.pipeline:main"
+egar-drc-prepare-dataset = "egar_drc.prepare_dataset:main"
+
+[project.urls]
+Repository = "https://github.com/Ali-Tarhini/EGAR-DRC"
+
+[project.optional-dependencies]
+dataset = ["datasets>=3,<5"]
+dev = [
+  "pytest>=8,<9",
+  "ruff>=0.9,<1",
+]
+plots = ["matplotlib>=3.8,<4"]
+
+[tool.setuptools.package-data]
+egar_drc = ["EGAR-DRC.png", "agents/*/*.yaml", "reference/*.txt", "runtime/*.yaml"]
+
+[tool.setuptools.packages.find]
+include = ["egar_drc*"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.coverage.run]
+source = ["egar_drc"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
