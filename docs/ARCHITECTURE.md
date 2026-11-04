@@ -57,7 +57,7 @@ Each loop is bounded. The defaults live in
 | --- | --- | --- |
 | `max_code_generation_compile_iterations` | 5 | Compile attempts per generation conversation. |
 | `max_code_generation_retry_iterations` | 20 | Fresh generation conversations. |
-| `max_testcase_generation_prepare_iterations` | 20 | Attempts to produce a valid initial test suite. |
+| `max_testcase_generation_prepare_iterations` | 10 | Attempts to produce a valid initial test suite. |
 | `max_critic_review_iterations` | 10 | Critic reviews. |
 | `max_code_correction_iterations` | 20 | Script corrections. |
 | `max_code_correction_compile_iterations` | 5 | Compile attempts per script correction. |

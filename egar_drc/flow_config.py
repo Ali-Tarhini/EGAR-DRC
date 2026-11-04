@@ -18,7 +18,7 @@ class EgarDrcConfig:
     max_code_generation_retry_iterations: int = 20
     max_code_correction_compile_iterations: int = 5
     max_code_correction_iterations: int = 20
-    max_testcase_generation_prepare_iterations: int = 20
+    max_testcase_generation_prepare_iterations: int = 10
     max_testcase_correction_prepare_iterations: int = 20
     max_testcase_correction_iterations: int = 20
     max_critic_review_iterations: int = 10
