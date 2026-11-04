@@ -1,0 +1,10 @@
+# EGAR-DRC loop budgets.
+max_code_generation_compile_iterations: 5
+max_code_generation_retry_iterations: 20
+max_code_correction_compile_iterations: 5
+max_code_correction_iterations: 20
+max_testcase_generation_prepare_iterations: 20
+max_testcase_correction_prepare_iterations: 20
+max_testcase_correction_iterations: 20
+max_critic_review_iterations: 10
+max_testcases: 16

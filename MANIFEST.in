@@ -1,0 +1,6 @@
+recursive-include scripts *.sh
+include egar_drc/EGAR-DRC.png
+include model_config.example.yaml
+recursive-include egar_drc/agents *.yaml
+recursive-include egar_drc/reference *.txt
+recursive-include egar_drc/runtime *.yaml
