@@ -59,11 +59,15 @@ Each loop is bounded. The defaults live in
 | `max_code_generation_retry_iterations` | 20 | Fresh generation conversations. |
 | `max_testcase_generation_prepare_iterations` | 10 | Attempts to produce a valid initial test suite. |
 | `max_critic_review_iterations` | 10 | Critic reviews. |
-| `max_code_correction_iterations` | 20 | Script corrections. |
+| `max_code_correction_iterations` | 20 | Script correction rounds, also limited by the critic review budget. |
 | `max_code_correction_compile_iterations` | 5 | Compile attempts per script correction. |
-| `max_testcase_correction_iterations` | 20 | Test-suite corrections. |
+| `max_testcase_correction_iterations` | 20 | Test-suite correction rounds, also limited by the critic review budget. |
 | `max_testcase_correction_prepare_iterations` | 20 | Attempts to materialize a corrected suite. |
 | `max_testcases` | 16 | Generated layouts per suite. |
+
+When `max_critic_review_iterations` is smaller than a correction-round budget,
+the critic review limit can end the loop before that correction budget is reached.
+Compile and testcase-preparation attempts are inner loops within a correction round.
 
 ## Implementation
 
